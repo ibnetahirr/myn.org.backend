@@ -5,10 +5,12 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from decouple import config
 import requests
+import os
 
 app = FastAPI()
 
-OPENAI_API_KEY = config("OPENAI_API_KEY")
+# OPENAI_API_KEY = config("OPENAI_API_KEY")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 REALTIME_MODEL = "gpt-4o-realtime-preview-2025-06-03"
 
 #CORS
